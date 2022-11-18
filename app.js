@@ -10,6 +10,8 @@ var app = express();
 var producto_routes = require('./routes/producto');
 var confeccionHombre_routes = require('./routes/confeccion-hombre');
 var confeccionMujer_routes = require('./routes/confeccion-mujer');
+var foro = require('./routes/foro');
+var auth = require('./routes/auth');
 
 //MiddLewares es algo que se ejecuta antes de que se procese
 app.use(bodyParser.urlencoded({extended:false}));
@@ -29,6 +31,8 @@ app.use((req, res, next) => {
 app.use('/api',producto_routes);
 app.use('/api',confeccionHombre_routes);
 app.use('/api',confeccionMujer_routes);
+app.use('/api',foro);
+app.use('/api',auth);
  
 
 
